@@ -14,7 +14,117 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      chat_messages: {
+        Row: {
+          created_at: string
+          id: string
+          message_id: string
+          parts: Json
+          role: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message_id: string
+          parts?: Json
+          role: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message_id?: string
+          parts?: Json
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      health_states: {
+        Row: {
+          demo_day: number
+          follow_up_status: string
+          id: string
+          support_notified: boolean
+          symptoms: Json
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          demo_day?: number
+          follow_up_status?: string
+          id?: string
+          support_notified?: boolean
+          symptoms?: Json
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          demo_day?: number
+          follow_up_status?: string
+          id?: string
+          support_notified?: boolean
+          symptoms?: Json
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      trusted_contacts: {
+        Row: {
+          contact_method: string | null
+          id: string
+          name: string
+          permissions: Json
+          relationship: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          contact_method?: string | null
+          id?: string
+          name?: string
+          permissions?: Json
+          relationship?: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          contact_method?: string | null
+          id?: string
+          name?: string
+          permissions?: Json
+          relationship?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
